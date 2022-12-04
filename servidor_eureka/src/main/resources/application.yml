@@ -1,0 +1,18 @@
+# Nombre identificador de eureka
+spring:
+  application:
+    name: servidor-eureka
+
+# Puerto asignado al server (por defecto)
+server: 
+  port: 8761
+
+# Config de el servidor  
+eureka: 
+  client: 
+    # Estas propiedades intentan conectarse con eureka, pero como es el mismo false.
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+      # Direccion de acceso desde el cliente y otros microservicios
+      defaultZone: http://localhost:8761/eureka 
