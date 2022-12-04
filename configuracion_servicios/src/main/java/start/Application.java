@@ -4,8 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.config.server.EnableConfigServer;
 
-/* Indica que gestiona toda la configuracion de los microservicios. Cloud congfig,
- * es un servidor de configuraciones*/
+/* 
+ * Indica que gestiona toda la configuracion de los microservicios.
+ */
+
 @EnableConfigServer
 @SpringBootApplication
 public class Application {
