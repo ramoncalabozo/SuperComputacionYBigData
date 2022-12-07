@@ -1,0 +1,9 @@
+# Nombre identificador del servicio
+spring:
+  application:
+    name: servidor-zuul
+  cloud:
+    config:
+    # Configuracion de url del cloud para acceder a configs
+    # En principio debe ser una dirección diferente a localhost.
+      uri: http://172.10.4.222:8888
