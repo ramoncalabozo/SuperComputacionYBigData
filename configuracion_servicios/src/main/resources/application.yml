@@ -9,8 +9,10 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/ramoncalabozo/spring_config_super_computacion.git
-          # uri: https://github.com/avadop/spring_config_curso_babel.git
-           # uri: https://github.com/migueldoctor/SpringCloudConfig-GitRepository
-          username: ramoncalabozo
-          password: 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
+          # uri: https://github.com/ramoncalabozo/spring_config_super_computacion.git
+           uri: https://github.com/avadop/spring_config_curso_babel.git
+          # uri: https://github.com/migueldoctor/SpringCloudConfig-GitRepository
+         # username: ramoncalabozo
+         # password: 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
+  # profiles:
+   # active: dev

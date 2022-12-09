@@ -2,6 +2,8 @@
 spring:
   application:
     name: servidor-eureka
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL5Dialect
 
 # Puerto asignado al server (por defecto)
 server: 
@@ -15,4 +17,4 @@ eureka:
     fetchRegistry: false
     serviceUrl:
       # Direccion de acceso desde el cliente y otros microservicios
-      defaultZone: http://localhost:8761/eureka 
+      defaultZone: http://127.0.0.1:8761/eureka 
