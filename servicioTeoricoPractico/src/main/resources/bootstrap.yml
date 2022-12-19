@@ -1,6 +1,6 @@
 spring:
   application:
-    name: servicio-vuelos
+    name: servicio-teoricopractico
   cloud:
     config:
       uri: http://localhost:8888
