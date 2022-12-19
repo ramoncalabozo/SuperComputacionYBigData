@@ -10,9 +10,4 @@ spring:
       #enabled: false
       server:
         git:
-           uri: https://github.com/ramoncalabozo/SuperComputacion.git
-           # uri: https://github.com/avadop/spring_config_curso_babel.git
-           # uri: https://github.com/migueldoctor/SpringCloudConfig-GitRepository
-
-  # profiles:
-   # active: dev
+           uri: https://github.com/ramoncalabozo/ejercicioAgenciaCloud.git
