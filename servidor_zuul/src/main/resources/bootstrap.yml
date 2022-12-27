@@ -7,3 +7,6 @@ spring:
     # Configuracion de url del cloud para acceder a configs
     # En principio debe ser una dirección diferente a localhost.
      uri: http://localhost:8888
+     # uri: http://54.208.194.117 :8888
+     fail-fast: true             #the service will not run if it can't reach the config-service
+     
