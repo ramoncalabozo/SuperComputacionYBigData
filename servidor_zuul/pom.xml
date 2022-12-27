@@ -8,9 +8,9 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.magadiflo.zuul</groupId>
-	<artifactId>sb-servicio-zuul-server</artifactId>
+	<artifactId>servidor_zuul</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>sb-servicio-zuul-server</name>
+	<name>servidor_zuul</name>
 	<description>Spring Boot Microservice Product</description>
 	<properties>
 		<java.version>1.8</java.version>
