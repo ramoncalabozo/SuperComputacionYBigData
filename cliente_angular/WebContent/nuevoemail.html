@@ -24,27 +24,20 @@
 		
 		
 		<div class="form-group">
-		<label>Vuelo</label>
+		<label>Usuario</label>
 		<select  ng-model="vuelo" ng-init="cargarVuelos()" class="form-control" style="width:80%">
 		
 			<option ng-repeat="v in vuelos" value="{{v.idvuelo}}">{{v.company}}</option>
 		
 		</select>
+		
 		</div>
 		<div class="form-group">
-		<label>Hotel</label>
-		<select  ng-model="hotel" ng-init="cargarHoteles()" class="form-control" style="width:80%">
-		
-			<option ng-repeat="h in hoteles" value="{{h.idHotel}}">{{h.nombre}}</option>
-		
-		</select>
-		</div>
-		<div class="form-group">
-		<label>DNI</label>
+		<label>Destinatario</label>
 		<input type="number" min="0" ng-model="dni" class="form-control" style="width:80%"/>
 		</div>
 		<div class="form-group">
-		<label>Nombre</label>
+		<label>Mensaje</label>
 		<input type="text" min="0" ng-model="nombre" class="form-control" style="width:80%"/>
 		</div>
 		<br/>
@@ -52,7 +45,7 @@
 		</div>
 		<div class="col-sm-6" style="border:solid 1px">
 		<div ng-show="mostrarTabla" >
-			<h3>Datos de la reserva</h3>
+			<h3>Datos del email</h3>
 			<hr>
 			<h4>Hotel: {{hotel}}</h4>
 			<h4>Numero de vuelo: {{vuelo}}</h4>
@@ -63,7 +56,7 @@
 	</div>
 		<br/>
 		
-		 <button ng-click="reservar()" type="button">Confirmar Reserva</button>
+		 <button ng-click="reservar()" type="button">Confirmar Email</button>
 		 <br/><br/><br/>
 		 <a href="inicio.html"> Inicio </a>
 	
