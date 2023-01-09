@@ -16,20 +16,28 @@
 		<java.version>1.8</java.version>
 		<spring-cloud.version>Hoxton.SR12</spring-cloud.version>
 	</properties>
+	
+	
+	
+	
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
+		
+		
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
 		</dependency>
+		
+		
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-netflix-zuul</artifactId>
 		</dependency>
-		
+
 		<!-- 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -43,6 +51,8 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
+
+
 			<exclusions>
 				<exclusion>
 					<groupId>org.junit.vintage</groupId>
@@ -50,6 +60,8 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
+
+		<!-- 
 
 		<dependency>
 			<groupId>org.springframework.security.oauth</groupId>
@@ -61,22 +73,39 @@
 			<artifactId>spring-security-jwt</artifactId>
 			<version>1.1.1.RELEASE</version>
 		</dependency>
+
+		-->
+
 		<dependency>
 			<groupId>org.glassfish.jaxb</groupId>
 			<artifactId>jaxb-runtime</artifactId>
 		</dependency>
+		
+		<!-- 
+		
+		
+		
+		-->
+		
+		
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-config</artifactId>
 		</dependency>
+		
+		
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-sleuth</artifactId>
 		</dependency>
+		
+		
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter</artifactId>
 		</dependency>
+		
+		
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-zipkin</artifactId>
@@ -90,7 +119,12 @@
 			<artifactId>spring-rabbit-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		
+		
+		
 	</dependencies>
+
+
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
