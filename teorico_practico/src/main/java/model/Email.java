@@ -5,7 +5,7 @@ public class Email {
 	private Integer idemail;
 	private String usuario;
 	private String destinatario;
-	
+
 	public Integer getIdemail() {
 		return idemail;
 	}
@@ -24,5 +24,5 @@ public class Email {
 	public void setDestinatario(String destinatario) {
 		this.destinatario = destinatario;
 	}
-	
+
 }

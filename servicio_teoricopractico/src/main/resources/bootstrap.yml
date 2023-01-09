@@ -3,4 +3,5 @@ spring:
     name: servicio-teoricopractico
   cloud:
     config:
-      uri: http://localhost:8888
+     # uri: http://172.10.4.222:8888
+       uri: http://localhost:8888

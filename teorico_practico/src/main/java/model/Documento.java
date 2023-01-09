@@ -5,7 +5,7 @@ public class Documento {
 	private Integer iddocumento;
 	private String nombre;
 	private String usuario;
-	
+
 	public Integer getIddocumento() {
 		return iddocumento;
 	}

@@ -5,8 +5,8 @@ public class Usuario {
 	private Integer idusuario;
 	private String usuario;
 	private String email;
-	
-	
+
+
 	public Integer getIdusuario() {
 		return idusuario;
 	}
@@ -25,6 +25,6 @@ public class Usuario {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	
-	
+
+
 }
