@@ -1,17 +1,29 @@
 package model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="documento")
 public class Documento {
 
-	private int idusuario;
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	private int iddocumento;
 	private int usuario;
 	private String nombre;
 
-	public int getIdusuario() {
-		return idusuario;
+
+
+	public int getIddocumento() {
+		return iddocumento;
 	}
 
-	public void setIdusuario(int idusuario) {
-		this.idusuario = idusuario;
+	public void setIddocumento(int iddocumento) {
+		this.iddocumento = iddocumento;
 	}
 
 	public int getUsuario() {
