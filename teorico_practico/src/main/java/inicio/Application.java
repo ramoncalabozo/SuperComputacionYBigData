@@ -18,7 +18,7 @@ public class Application {
 		SpringApplication.run(Application.class, args);
 	}
 	
-	/* Activa la libreria Ribbon para acceder al servicio utilizando eureka*/
+	/* Activa la libreria Ribbon para acceder al servicio utilizando eureka y zuul*/
 	@LoadBalanced
 	@Bean	
 	public RestTemplate crearTemplate() {
