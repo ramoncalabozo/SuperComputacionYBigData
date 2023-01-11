@@ -7,7 +7,7 @@
 		<version>2.3.12.RELEASE</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.magadiflo.zuul</groupId>
+	<groupId>com.example</groupId>
 	<artifactId>servidor_zuul</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>servidor_zuul</name>
@@ -106,10 +106,16 @@
 		</dependency>
 		
 		
+		
+		<!-- 
+		
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-zipkin</artifactId>
-		</dependency>
+		</dependency>		
+		
+		-->
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-amqp</artifactId>
