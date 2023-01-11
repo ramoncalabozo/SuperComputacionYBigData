@@ -9,7 +9,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.http.client.support.BasicAuthenticationInterceptor;
 import org.springframework.web.client.RestTemplate;
 
-@ComponentScan(basePackages = {"controller"})
+@ComponentScan(basePackages = {"controller","service","dao"})
 @EnableDiscoveryClient
 @SpringBootApplication
 public class Application {
