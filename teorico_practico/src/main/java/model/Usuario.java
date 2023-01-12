@@ -12,6 +12,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name="usuario")
 @NamedQuery(name="Usuario.findAll", query="SELECT u FROM Usuario u")
+@NamedQuery(name="Usuario.findByEmail", query="SELECT u FROM Usuario u where u.email=?1")
 
 public class Usuario implements Serializable {
 

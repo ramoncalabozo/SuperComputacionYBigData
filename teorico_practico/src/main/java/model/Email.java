@@ -22,8 +22,17 @@ public class Email implements Serializable {
 	private int idemail;
 	private int usuario;
 	private String destinatario;
+	private String asunto;
 
 
+
+	public String getAsunto() {
+		return asunto;
+	}
+
+	public void setAsunto(String asunto) {
+		this.asunto = asunto;
+	}
 
 	public int getIdemail() {
 		return idemail;

@@ -17,15 +17,15 @@ public class UsuarioDao {
 	@PersistenceContext
 	private EntityManager em;
 
+	public List<Usuario> getAllUsuarios() {
+		TypedQuery<Usuario> tQuery = this.em.createNamedQuery("Usuario.findAll", Usuario.class);
+		return tQuery.getResultList();
+	}
+
 	@Transactional
 	public boolean generarUsuario(Usuario usuario) {
 		this.em.persist(usuario);
 		return true;
-	}
-
-	public List<Usuario> getAllUsuarios() {
-		TypedQuery<Usuario> tQuery = this.em.createNamedQuery("Usuario.findAll", Usuario.class);
-		return tQuery.getResultList();
 	}
 
 	@Transactional
@@ -43,6 +43,13 @@ public class UsuarioDao {
 		} else {
 			return false;
 		}
+	}
+	
+	public Usuario getUsuariosporEmail(String email) {
+		TypedQuery<Usuario> tQuery = this.em.createNamedQuery("Usuario.findByEmail", Usuario.class);
+		tQuery.setParameter(1, email);
+		List<Usuario> usuario = tQuery.getResultList();
+		return usuario.size()>0? usuario.get(0) : null;
 	}
 
 }

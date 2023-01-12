@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import model.Email;
@@ -68,6 +67,11 @@ public class TeoricoPracticoController {
 		else
 			return "Hubo algun error";
 	}
+	
+	@GetMapping(value = "usuarioPorEmail/{email}", produces = MediaType.APPLICATION_JSON_VALUE)
+	public Usuario getUsuariosporEmail(@PathVariable("email") String email) {
+		return this.servicioBD.getUsuariosporEmail(email);
+	}
 
 	/*
 	 * ************************************************* Emails
@@ -103,15 +107,26 @@ public class TeoricoPracticoController {
 	}
 
 	@PostMapping(value = "enviarEmail", produces = MediaType.APPLICATION_JSON_VALUE)
-	public String enviarEmail(@RequestBody EnvioEmail email) {
+	public String enviarEmail(@RequestBody EnvioEmail envioEmail) {
 		try {
-			if (this.servicioAWS.enviarEmail(email))
-				return "Email Enviado";
-			else
+			if (this.servicioAWS.enviarEmail(envioEmail)) {
+				Email email = recuperarEmailDeEnvioEmail(envioEmail);
+				this.servicioBD.generarEmail(email);
+				return "Email enviado, y actualizado en la DB";
+			} else
 				return "Hubo algun error";
 		} catch (MessagingException | IOException | javax.mail.MessagingException e) {
 			return "Hubo algun error";
 		}
+	}
+
+	private Email recuperarEmailDeEnvioEmail(EnvioEmail envioEmail) {
+		Email email = new Email();
+		Usuario usuario = this.servicioBD.getUsuariosporEmail(envioEmail.getSender());
+		email.setDestinatario(envioEmail.getRecipient());
+		email.setUsuario(usuario.getIdusuario());
+		email.setAsunto(envioEmail.getSubject());
+		return email;
 	}
 
 }

@@ -41,6 +41,10 @@ public class ServicioBD {
 	public boolean eliminarUsuario(int id) {
 		return this.usuarioDao.deleteUsuario(id);
 	}
+	
+	public Usuario getUsuariosporEmail(String nombre) {
+		return this.usuarioDao.getUsuariosporEmail(nombre);
+	}
 
 	/*
 	 * ****************************************************************** EMAILS
