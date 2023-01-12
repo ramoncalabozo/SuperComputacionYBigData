@@ -1,9 +1,11 @@
 package controller;
 
+import java.io.IOException;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
+import org.springframework.messaging.MessagingException;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,10 +13,13 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import model.Email;
+import model.EnvioEmail;
 import model.Usuario;
+import service.ServicioAWS;
 import service.ServicioBD;
 
 @CrossOrigin(origins = "*")
@@ -23,6 +28,8 @@ public class TeoricoPracticoController {
 
 	@Autowired
 	ServicioBD servicioBD;
+	@Autowired
+	ServicioAWS servicioAWS;
 
 	@GetMapping(value = "saludar", produces = MediaType.TEXT_PLAIN_VALUE)
 	public String generarSaludo() {
@@ -61,8 +68,7 @@ public class TeoricoPracticoController {
 		else
 			return "Hubo algun error";
 	}
-	
-	
+
 	/*
 	 * ************************************************* Emails
 	 ***************************************************/
@@ -95,4 +101,17 @@ public class TeoricoPracticoController {
 		else
 			return "Hubo algun error";
 	}
+
+	@PostMapping(value = "enviarEmail", produces = MediaType.APPLICATION_JSON_VALUE)
+	public String enviarEmail(@RequestBody EnvioEmail email) {
+		try {
+			if (this.servicioAWS.enviarEmail(email))
+				return "Email Enviado";
+			else
+				return "Hubo algun error";
+		} catch (MessagingException | IOException | javax.mail.MessagingException e) {
+			return "Hubo algun error";
+		}
+	}
+
 }
