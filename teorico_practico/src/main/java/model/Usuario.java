@@ -11,7 +11,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="usuario")
-@NamedQuery(name="Usuario.findAll", query="SELECT u FROM usuario u")
+@NamedQuery(name="Usuario.findAll", query="SELECT u FROM Usuario u")
 
 public class Usuario implements Serializable {
 
