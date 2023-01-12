@@ -36,9 +36,9 @@ public class UsuarioDao {
 
 	@Transactional
 	public boolean deleteUsuario(int id) {
-		Usuario contacto = this.em.find(Usuario.class, id);
-		if (contacto != null) {
-			this.em.remove(contacto);
+		Usuario usuario = this.em.find(Usuario.class, id);
+		if (usuario != null) {
+			this.em.remove(usuario);
 			return true;
 		} else {
 			return false;

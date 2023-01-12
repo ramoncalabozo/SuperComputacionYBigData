@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import model.Email;
 import model.Usuario;
 import service.ServicioBD;
 
@@ -28,8 +29,12 @@ public class TeoricoPracticoController {
 		return "Prueba SuperComputación funciona el servicio";
 	}
 
+	/*
+	 * ************************************************* Usuarios
+	 ***************************************************/
+
 	@GetMapping(value = "allUsuarios", produces = MediaType.APPLICATION_JSON_VALUE)
-	public List<Usuario> getReservas() {
+	public List<Usuario> getUsuarios() {
 		return this.servicioBD.getAllUsuarios();
 	}
 
@@ -50,9 +55,43 @@ public class TeoricoPracticoController {
 	}
 
 	@DeleteMapping(value = "eliminarUsuario/{id}")
-	public String eliminarContacto(@PathVariable("id") int id) {
+	public String eliminarUsuario(@PathVariable("id") int id) {
 		if (this.servicioBD.eliminarUsuario(id))
 			return "Usuario eliminado";
+		else
+			return "Hubo algun error";
+	}
+	
+	
+	/*
+	 * ************************************************* Emails
+	 ***************************************************/
+
+	@GetMapping(value = "allEmails", produces = MediaType.APPLICATION_JSON_VALUE)
+	public List<Email> getEmails() {
+		return this.servicioBD.getAllEmails();
+	}
+
+	@PostMapping(value = "nuevoEmail", consumes = MediaType.APPLICATION_JSON_VALUE)
+	public String nuevoEmail(@RequestBody Email email) {
+		if (this.servicioBD.generarEmail(email))
+			return "Email agregado";
+		else
+			return "Hubo algun error";
+	}
+
+	@PutMapping(value = "modificarEmail", consumes = MediaType.APPLICATION_JSON_VALUE)
+	public String modificarEmail(@RequestBody Email email) {
+		if (this.servicioBD.modificarEmail(email))
+			return "Email modificado";
+		else
+			return "Hubo algun error";
+	}
+
+	@DeleteMapping(value = "eliminarEmail/{id}")
+	public String eliminarEmail(@PathVariable("id") int id) {
+		if (this.servicioBD.eliminarEmail(id))
+			return "Email eliminado";
 		else
 			return "Hubo algun error";
 	}
