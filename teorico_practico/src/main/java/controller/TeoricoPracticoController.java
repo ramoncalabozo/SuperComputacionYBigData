@@ -126,6 +126,7 @@ public class TeoricoPracticoController {
 		email.setDestinatario(envioEmail.getRecipient());
 		email.setUsuario(usuario.getIdusuario());
 		email.setAsunto(envioEmail.getSubject());
+		email.setMensaje(envioEmail.getBodyHTML());
 		return email;
 	}
 
